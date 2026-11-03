@@ -143,7 +143,7 @@ module.exports = function (router) {
                 { assignedUser: '', assignedUserName: 'unassigned' }
             );
             await user.deleteOne();
-            helpers.sendOk(res, 200, 'User deleted', user);
+            res.status(204).end();
         } catch (err) {
             helpers.handleError(res, err);
         }
